@@ -9,8 +9,10 @@
   </head>
   <body>
     <div>
+      <center>
       SUHAS STAMPEDE DEMO <br>
       WASD TO MOVE CLICK TO SHOOT <br>
+      </center>
     </div>
     <div id="unity-container" class="unity-desktop">
       <canvas id="unity-canvas" width=960 height=600></canvas>
@@ -95,9 +97,6 @@
           progressBarFull.style.width = 100 * progress + "%";
         }).then((unityInstance) => {
           loadingBar.style.display = "none";
-          fullscreenButton.onclick = () => {
-            unityInstance.SetFullscreen(1);
-          };
         }).catch((message) => {
           alert(message);
         });
