@@ -58,3 +58,104 @@ h1 {
   margin-top: 20px;
   margin-bottom: 20px;
 }
+
+
+
+
+
+
+/* TicTacToe */
+
+* {
+  box-sizing: border-box;
+}
+#app {
+  border: 1px solid black;
+  width: 1000px;
+  height: 1000px;
+  font-family: sans-serif;
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  background: #222;
+}
+
+.header > * {
+  color: #eeeeee;
+}
+
+.header__turn {
+  padding: 12px;
+}
+
+.header__status {
+  padding: 12px;
+  flex-grow: 1;
+  text-align: center;
+}
+
+.header__restart {
+  font-weight: bold;
+  font-family: sans-serif;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  padding: 12px;
+  background: none;
+  cursor: pointer;
+}
+
+.board {
+  display: grid;
+  background: #cccccc;
+  gap: 20px;
+  padding: 10px;
+  flex-grow: 1;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 2fr); 
+}
+
+.small__board {
+  display: grid;
+  background: #ddd;
+  gap: 5px;
+  flex-grow: 1;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 2fr); 
+}
+
+.board__tile {
+  background: #ffffff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 80px;
+  font-family: sans-serif;
+  color: #000;
+}
+.board__tile:hover {
+  background: #eeeeee;
+}
+.board__tile--winner {
+  color: green;
+}
+
+.small__board--current {
+  background-color: #e5c636;
+}
+
+.small__board--xWin {
+  background-color: red;
+}
+.small__board--oWin {
+  background-color: blue;
+}
+.small__board--tie {
+  background-color: purple;
+}
