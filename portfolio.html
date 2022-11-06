@@ -3,10 +3,13 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
   <title>Ricky Liang's Portfolio</title>
   <meta name="author" content="Ricky Liang">
   <link rel="stylesheet" href="css/styles.css">
+  <link rel="shortcut icon" href="SuhasTemplateData/favicon.ico">
+
 </head>
 
 <body>
@@ -25,13 +28,46 @@
       Here are some games I've made! <br>
        <br>
     </p>
+    <h2>Ardent Demo</h2>
+    <p>
+      Demonstration of my game Ardent! v1 <br>
+      WASD to move, Right Click to attack, I for inventory.
+      <br>
+      <br>
+
+    </p>
+    <h2>Suhas Stampede</h2>
+    <p>
+      Defend yourself from enemies for as long as possible! <br>
+      WASD to move, Right Click to shoot. Good Luck! (note: quit button works only on the application version)
+        <div id="unity-container" class="unity-desktop">
+          <canvas id="unity-canvas" width=960 height=600></canvas>
+          <div id="unity-loading-bar">
+            <div id="unity-logo"></div>
+            <div id="unity-progress-bar-empty">
+              <div id="unity-progress-bar-full"></div>
+            </div>
+          </div>
+          <div id="unity-warning"> </div>
+          <div id="unity-footer">
+            <div id="unity-webgl-logo"></div>
+            <div id="unity-fullscreen-button"></div>
+          </div>
+        </div>
+        <script src="./js/SuhasStampede.js" type="module"></script>
+        <br>
+    </p>
+
     <h2>Ultimate Tic Tac Toe</h2>
     <p>
       Game I made for the AP Computer Science Principles project portion. Completely made in HTML/CSS/JS. <br>
-      <a href="https://www.thegamegal.com/2018/09/01/ultimate-tic-tac-toe/"><u>How To Play</u></a>
+      <a href="https://www.thegamegal.com/2018/09/01/ultimate-tic-tac-toe/"><u>How To Play</u></a><br>
+      Yellow boards indicate the next board to be played on. Red and Blue mark won boards.
+      
       <div id="app"></div>
-      <script src="./js/main.js" type="module"></script>
+      <script src="./js/UltTicTacToe.js" type="module"></script>
     </p>
+
   </div>
 </body>
 </html>
