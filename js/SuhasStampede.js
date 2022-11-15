@@ -36,8 +36,6 @@ var config = {
   frameworkUrl: buildUrl + "/websuhasstampede.framework.js",
   codeUrl: buildUrl + "/websuhasstampede.wasm",
   streamingAssetsUrl: "StreamingAssets",
-  companyName: "DefaultCompany",
-  productName: "My project (1)",
   productVersion: "1.0",
   showBanner: unityShowBanner,
 };

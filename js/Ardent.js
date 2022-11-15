@@ -1,9 +1,9 @@
-var container = document.querySelector("#unity-container");
-      var canvas = document.querySelector("#unity-canvas");
-      var loadingBar = document.querySelector("#unity-loading-bar");
-      var progressBarFull = document.querySelector("#unity-progress-bar-full");
-      var fullscreenButton = document.querySelector("#unity-fullscreen-button");
-      var warningBanner = document.querySelector("#unity-warning");
+var container = document.querySelector("#unity-container-Ardent");
+      var canvas = document.querySelector("#unity-canvas-Ardent");
+      var loadingBar = document.querySelector("#unity-loading-bar-Ardent");
+      var progressBarFull = document.querySelector("#unity-progress-bar-full-Ardent");
+      var fullscreenButton = document.querySelector("#unity-fullscreen-button-Ardent");
+      var warningBanner = document.querySelector("#unity-warning-Ardent");
 
       // Shows a temporary message banner/ribbon for a few seconds, or
       // a permanent error message on top of the canvas if type=='error'.
@@ -30,13 +30,14 @@ var container = document.querySelector("#unity-container");
       }
 
       var buildUrl = "ArdentBuild";
-      var loaderUrl = buildUrl + "/Ardent.loader.js";
+      var loaderUrl = buildUrl + "/ricky-website.loader.js";
       var config = {
-        dataUrl: buildUrl + "/Ardent.data.br",
-        frameworkUrl: buildUrl + "/Ardent.framework.js.br",
-        codeUrl: buildUrl + "/Ardent.wasm.br",
+        dataUrl: buildUrl + "/ricky-website.data.unityweb",
+        frameworkUrl: buildUrl + "/ricky-website.framework.js.unityweb",
+        codeUrl: buildUrl + "/ricky-website.wasm.unityweb",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "DefaultCompany",
+        productName: "ProjectEthub",
         productVersion: "1.0",
         showBanner: unityShowBanner,
       };
@@ -55,7 +56,7 @@ var container = document.querySelector("#unity-container");
         meta.name = 'viewport';
         meta.content = 'width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes';
         document.getElementsByTagName('head')[0].appendChild(meta);
-        container.className = "unity-mobile";
+        container.className = "unity-mobile-Ardent";
 
         // To lower canvas resolution on mobile devices to gain some
         // performance, uncomment the following line:
@@ -68,8 +69,8 @@ var container = document.querySelector("#unity-container");
       } else {
         // Desktop style: Render the game canvas in a window that can be maximized to fullscreen:
 
-        canvas.style.width = "960px";
-        canvas.style.height = "600px";
+        canvas.style.width = "1980px";
+        canvas.style.height = "1080px";
       }
 
       loadingBar.style.display = "block";
