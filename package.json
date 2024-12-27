@@ -4,11 +4,15 @@
   "homepage": "https://liangricky7.github.io/",
   "private": true,
   "dependencies": {
+    "@fontsource/hind-madurai": "^5.1.0",
+    "@fontsource/montserrat": "^5.1.0",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "history": "^5.3.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "react-router-dom": "^7.1.1",
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"
   },
@@ -39,6 +43,7 @@
     ]
   },
   "devDependencies": {
-    "ajv": "^8.17.1"
+    "ajv": "^8.17.1",
+    "react-router": "^7.1.1"
   }
 }
