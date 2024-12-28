@@ -15,6 +15,10 @@ const Home = () => {
                     
                     <img src={RickyPic} alt="Ricky Liang" className="selfPortrait"/>
                 </section>
+
+                {/* <section className="currentProjectsSection">
+                    asdfasd
+                </section> */}
             </main>
         </>
     )

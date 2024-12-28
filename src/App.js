@@ -6,6 +6,7 @@ import {
 } from "react-router-dom";
 import { createBrowserHistory } from "history";
 import Home from "./pages/home";
+import Cursor from "./components/cursor/cursor";
 
 function App() {
 
@@ -13,6 +14,7 @@ function App() {
 
   return (
     <>
+      <Cursor/>
       <Router history = {history}>
         <Routes>
           <Route 
