@@ -1,0 +1,14 @@
+a {
+    width: 4vw;
+    height: fit-content;
+
+    border-radius: 1vw;
+    padding: 2vh;
+
+    color: rgb(252, 249, 243);
+    font-size: 2vw;
+    text-decoration: none;
+
+    background-color: rgb(56, 102, 65);;
+
+}
