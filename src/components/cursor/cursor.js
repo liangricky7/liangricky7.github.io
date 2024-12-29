@@ -22,7 +22,7 @@ const Cursor = () => {
             currX += (lastX - currX) * cursorSpeed;
             currY += (lastY - currY) * cursorSpeed;
 
-            dot.style.transform = `translate(${currX - 8}px, ${currY - 8}px)`;
+            dot.style.transform = `translate(${currX - 6}px, ${currY - 6}px)`;
 
             rafId = requestAnimationFrame(updatePosition);
         };

@@ -1,39 +1,89 @@
 .home {
     width: 100%;
-    height: 100vh;
+    height: fit-content;
     overflow: hidden;
-
-    padding-top: 5vh;
-    padding-bottom: 5vh;
     
     background-color: rgb(252, 249, 243);
 }
 
-.introSection {
-    width: 90%;
-    height: 90%;
+.contact {
+    width: 55%;
 
-    padding-left: 5%;
-    padding-right: 5%;
+    display: flex;
+    justify-content: space-between;
+
+    position: fixed;
+    margin-left: 8%;
+}
+
+.contactPoint {
+    display: flex;
+    align-items: center;
+    gap: 1vw;
+}
+
+.contactPoint img {
+    width: calc(14px + 1vw);
+    height: calc(14px + 1vw);
+
+    object-fit: contain;
+}
+
+.contactPoint p {
+    font-size: calc(10px + 1vw);
+}
+
+section {
+    width: 84%;
+    margin: 4%;
+    margin-left: 8%;
+    margin-right: 8%;
+}
+
+.introSection {
+    height: 90%;
 
     display: flex;
     justify-content: space-between;
     align-items: center;
 
+    padding-top: 4%;
+    padding-bottom: 4%;
 }
 
 .introSectionText {
-    width: 60%;
+    width: 70%;
     height: fit-content;
-    margin: 0 auto;
+
 }
 
 .introSectionText h1 {
+    font-weight: 400;
+
     margin-top: 0;
     margin-bottom: 0;
+}
+.introSectionText p {
+    font-size: 2vw;
+
+    margin-top: 0;
+    margin-bottom: 1vh;
 }
 
 .selfPortrait {
     width: 30%;
     border-radius: 2vw;
+}
+
+.aboutSection {
+
+}
+
+.featuredProjectsSection {
+    height: 90%;
+
+}
+
+.featuredProjectsSection h1 {
+    /* padding-left: 5%; */
 }

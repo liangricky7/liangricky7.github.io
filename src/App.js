@@ -15,14 +15,7 @@ function App() {
   return (
     <>
       <Cursor/>
-      <Router history = {history}>
-        <Routes>
-          <Route 
-            exact path="/"
-            element={<Home/>}
-          />
-        </Routes>
-      </Router>
+      <Home/>
     </>
   );
 }
