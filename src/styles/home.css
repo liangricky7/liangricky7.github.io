@@ -59,14 +59,11 @@ section {
 }
 
 .introSectionText h1 {
-    font-weight: 400;
 
     margin-top: 0;
     margin-bottom: 5vh;
 }
 .introSectionText p {
-    font-size: 2vw;
-
     margin-top: 0;
     margin-bottom: 1vh;
 }
@@ -83,14 +80,16 @@ section {
 }
 
 .aboutSection {
-
+    height: 90vh;
     /* margin-top: 10%; */
 }
 
 .aboutSection p {
     width: 60%;
-}
+    height: 60%;
 
+    overflow-y: scroll;
+}
 
 
 .featuredProjectsSection h1 {

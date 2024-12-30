@@ -1,4 +1,4 @@
-import React from "react";
+import {React, useState} from "react";
 import "../styles/home.css";
 
 import Button from "../components/button/button";
@@ -46,15 +46,15 @@ const Home = () => {
                         <br/>
                         <br/>
                         Beyond coding, I enjoy sharing my love for building software with others. 
-                        In that spirit, I served as <span className="highlight">Director of SASE GeauxHack '24</span>, LSU's premier Hackathon, where I helped create an environment where participants could dive into creating their own projects and experience what it's like to be a developer.. 
+                        In that spirit, I served as <span className="highlight">Director of SASE GeauxHack '24</span>, LSU's premier Hackathon, where I helped create an environment where participants could dive into creating their own projects and experience what it's like to be a developer. 
                     </p>
                 </section>
 
-                <section className="featuredProjectsSection">
+                {/* <section className="featuredProjectsSection">
                 <h1>Featured Work</h1>
 
 
-                </section>
+                </section> */}
 
             </main>
         </>
