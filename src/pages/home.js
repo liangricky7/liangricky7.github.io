@@ -22,17 +22,17 @@ const Home = () => {
         <Card
         key="1"
         title="RENVI"
-        text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec justo turpis, ullamcorper quis nisi vel, mollis consectetur diam. Donec vulputate metus rutrum lacus ultricies ornare. Nunc malesuada dolor sed elit dapibus tristique. Nullam id felis sem. Nam vitae molestie libero. Mauris lacinia mattis odio ac fermentum. Quisque nec arcu tortor. Aliquam a tellus velit. Ut aliquet commodo viverra. Ut pulvinar gravida nibh non vestibulum. Aenean magna nisi, auctor ac porttitor scelerisque, convallis ac massa."
+        text="I created RENVI, an interior design app that automatically creates comfortable and logical furniture layouts for the user. Once given a home's floorplan and the user's furniture, RENVI will be able to generate a layout with the press of the button. My role on RENVI is project manager and lead backend engineer, responsible for designing generator logic in C#/.NET."
         />,
         <Card
         key="2"
         title="Elyssiu"
-        text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec justo turpis, ullamcorper quis nisi vel, mollis consectetur diam. Donec vulputate metus rutrum lacus ultricies ornare. Nunc malesuada dolor sed elit dapibus tristique. Nullam id felis sem. Nam vitae molestie libero. Mauris lacinia mattis odio ac fermentum. Quisque nec arcu tortor. Aliquam a tellus velit. Ut aliquet commodo viverra. Ut pulvinar gravida nibh non vestibulum. Aenean magna nisi, auctor ac porttitor scelerisque, convallis ac massa."
+        text="Elyssiu is a 2D Top-Down RPG game demo created in Unity parodying the LSU campus. You play as a CS Major (Combat Sorcery) and tasked with the goal of cleansing the kingdom of Elyssiu from evil. I was responsible for project management with a team of four others, as well as ideation of core gameplay ideas. Programwise, I was responsible for creating the entire combat system."
         />,
         <Card
         key="3"
         title="SASE@LSU Website"
-        text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec justo turpis, ullamcorper quis nisi vel, mollis consectetur diam. Donec vulputate metus rutrum lacus ultricies ornare. Nunc malesuada dolor sed elit dapibus tristique. Nullam id felis sem. Nam vitae molestie libero. Mauris lacinia mattis odio ac fermentum. Quisque nec arcu tortor. Aliquam a tellus velit. Ut aliquet commodo viverra. Ut pulvinar gravida nibh non vestibulum. Aenean magna nisi, auctor ac porttitor scelerisque, convallis ac massa."
+        text="As Webmaster of SASE@LSU, I redesigned and developed the club website in React.js/CSS. The website currently serves 150+ active club members, garnering 1.5k views weekly during the school semesters."
         />
     ];
 
