@@ -7,6 +7,7 @@ import {
 import { createBrowserHistory } from "history";
 import Home from "./pages/home";
 import Cursor from "./components/cursor/cursor";
+import Personal from "./pages/personal";
 
 function App() {
 
@@ -14,8 +15,20 @@ function App() {
 
   return (
     <>
+    <Router history={history}>
       <Cursor/>
-      <Home/>
+      <Routes>
+        <Route
+          exact path="/"
+          element={<Home/>}
+        />
+        <Route
+          exact path="/personal"
+          element={<Personal/>}
+        />
+      </Routes>
+    </Router>
+
     </>
   );
 }

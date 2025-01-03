@@ -1,7 +1,12 @@
-import {React, useState} from "react";
+import { 
+    React, 
+    useState,
+    useEffect 
+} from "react";
 import "../styles/home.css";
 
 import Button from "../components/button/button";
+import Card from "../components/card/card";
 
 import RickyPic from "../assets/ricky.png"
 import Mail from "../assets/icons/mail.png"
@@ -11,6 +16,26 @@ import Linkedin from "../assets/icons/linkedin.png"
 import Resume from "../assets/Ricky_Liang_Resume.pdf"
 
 const Home = () => {
+    const [currIndex, setIndex] = useState(0);
+
+    const projects = [ 
+        <Card
+        key="1"
+        title="RENVI"
+        text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec justo turpis, ullamcorper quis nisi vel, mollis consectetur diam. Donec vulputate metus rutrum lacus ultricies ornare. Nunc malesuada dolor sed elit dapibus tristique. Nullam id felis sem. Nam vitae molestie libero. Mauris lacinia mattis odio ac fermentum. Quisque nec arcu tortor. Aliquam a tellus velit. Ut aliquet commodo viverra. Ut pulvinar gravida nibh non vestibulum. Aenean magna nisi, auctor ac porttitor scelerisque, convallis ac massa."
+        />,
+        <Card
+        key="2"
+        title="Elyssiu"
+        text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec justo turpis, ullamcorper quis nisi vel, mollis consectetur diam. Donec vulputate metus rutrum lacus ultricies ornare. Nunc malesuada dolor sed elit dapibus tristique. Nullam id felis sem. Nam vitae molestie libero. Mauris lacinia mattis odio ac fermentum. Quisque nec arcu tortor. Aliquam a tellus velit. Ut aliquet commodo viverra. Ut pulvinar gravida nibh non vestibulum. Aenean magna nisi, auctor ac porttitor scelerisque, convallis ac massa."
+        />,
+        <Card
+        key="3"
+        title="SASE@LSU Website"
+        text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec justo turpis, ullamcorper quis nisi vel, mollis consectetur diam. Donec vulputate metus rutrum lacus ultricies ornare. Nunc malesuada dolor sed elit dapibus tristique. Nullam id felis sem. Nam vitae molestie libero. Mauris lacinia mattis odio ac fermentum. Quisque nec arcu tortor. Aliquam a tellus velit. Ut aliquet commodo viverra. Ut pulvinar gravida nibh non vestibulum. Aenean magna nisi, auctor ac porttitor scelerisque, convallis ac massa."
+        />
+    ];
+
     return (
         <>
             <main className="home">
@@ -19,6 +44,7 @@ const Home = () => {
                     <div className="contactPoint"><img src={GitHub} alt="Github Icon"/><p>liangricky7</p></div>
                     <div className="contactPoint"><img src={Linkedin} alt="Linkedin Icon"/><p>rickyxliang</p></div>
                 </aside>
+
                 <section className="introSection">
                     <div className="introSectionText">
                         <p>👋 Hi, I'm <span className="highlight">Ricky Liang,</span> </p>
@@ -28,10 +54,9 @@ const Home = () => {
                             link={Resume}
                         /> */}
                     </div>
-                    
                     <img src={RickyPic} alt="Ricky Liang" className="selfPortrait"/>
-                </section>
 
+                </section>
 
                 <section className="aboutSection">
                     <h1>About Me</h1>
@@ -50,11 +75,35 @@ const Home = () => {
                     </p>
                 </section>
 
-                {/* <section className="featuredProjectsSection">
-                <h1>Featured Work</h1>
+                <section className="featuredProjectsSection">
+                    <h1>Featured Work</h1>
+                    <div className="projectCarousel">
+                        <div 
+                            className="slideContainer"
+                            style={{transform: `translateX(-${currIndex * 100}%)`}}
+                        >
+                            {projects.map((project, index) => (
+                                <div 
+                                    key={index}
+                                    className="slide"
+                                    style={{transform: `translateX(${index * 100}%)`}}
+                                >
+                                    {project}
+                                </div>
+                            ))}
+                        </div>
 
-
-                </section> */}
+                        <div className="carouselDots">
+                            {projects.map((_, index) => (
+                                <button
+                                    key={index}
+                                    onClick={() => setIndex(index)}
+                                    className={`carouselDot ${currIndex == index ?'carouselDotActive' : ''}`}
+                                />
+                            ))}
+                        </div>
+                    </div>
+                </section>
 
             </main>
         </>

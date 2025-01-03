@@ -3,14 +3,16 @@ import "./card.css";
 
 const Card = (props) => {
     const {
+        title,
         text,
         link
     } = props;
 
     return (
-        <a href={link} target="_blank" rel="noreferrer">
-            {text}
-        </a>
+        <div className="card">
+            <h2>{title}</h2>
+            <p>{text}</p>
+        </div>
     )
 };
 

@@ -1,0 +1,12 @@
+.card {
+    /* width: 60%; */
+    width: 50vw;
+    height: 60vh;
+
+    /* background-color: green; */
+    position: absolute;
+}
+
+.card h2 {
+    margin-top: 0;
+}
