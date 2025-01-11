@@ -47,7 +47,7 @@ const Home = () => {
 
                 <section className="introSection">
                     <div className="introSectionText">
-                        <p>👋 Hi, I'm <span className="highlight">Ricky Liang,</span> </p>
+                        <p>👋 Hi, I'm <span className="highlightP">Ricky Liang,</span> </p>
                         <h1><strong>Student Full Stack Developer</strong> with a passion for design.</h1>
                         {/* <Button
                             text="Resume"
