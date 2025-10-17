@@ -1,0 +1,53 @@
+@font-face {
+  font-display: swap;
+  font-family: 'Geist';
+  font-style: normal;
+  font-weight: 400;
+  src: url(./assets/fonts/Geist/static/Geist-Regular.woff2) format("woff2"), 
+       url(./assets/fonts/Geist/static/Geist-Regular.ttf) format("truetype");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'Geist';
+  font-style: normal;
+  font-weight: 600;
+  src: url(./assets/fonts/Geist/static/Geist-SemiBold.woff2) format("woff2"), 
+       url(./assets/fonts/Geist/static/Geist-SemiBold.ttf) format("truetype");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  src: url(./assets/fonts/Inter/static/Inter_18pt-SemiBold.woff2) format("woff2"), 
+       url(./assets/fonts/Inter/static/Inter_18pt-SemiBold.ttf) format("truetype");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'Inter';
+  font-style: italic;
+  font-weight: 600;
+  src: url(./assets/fonts/Inter/static/Inter_18pt-SemiBoldItalic.woff2) format("woff2"), 
+       url(./assets/fonts/Inter/static/Inter_18pt-SemiBoldItalic.ttf) format("truetype");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  src: url(./assets/fonts/Inter/static/Inter_18pt-Regular.woff2) format("woff2"), 
+       url(./assets/fonts/Inter/static/Inter_18pt-Regular.ttf) format("truetype");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'Inter';
+  font-style: italic;
+  font-weight: 400;
+  src: url(./assets/fonts/Inter/static/Inter_18pt-Italic.woff2) format("woff2"), 
+       url(./assets/fonts/Inter/static/Inter_18pt-Italic.ttf) format("truetype");
+}
