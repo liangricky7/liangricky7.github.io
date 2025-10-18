@@ -16,7 +16,7 @@ h1 {
 h2 {
   font-family: 'Geist';
   font-weight: 400;
-  font-size: clamp(0.5rem, 1.5vw, 1rem);
+  font-size: clamp(0.6rem, 2.17vw, 1.2rem);
 }
 
 h3 {

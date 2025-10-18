@@ -10,6 +10,18 @@
     z-index: 10;
 }
 
+.content-field {
+    width: calc(100vw - 4vw);
+    height: calc(100vh - 4vw);
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+}
+
+.flex-column {
+    flex-direction: column;
+}
+
 .welcome-section {
     position: relative;
     width: 100vw;
@@ -34,6 +46,11 @@
     align-items: center;
 }
 
+.about-section img {
+    width: 33vw;
+    object-fit: cover;
+}
+
 .portfolio-section {
     position: relative;
     width: 100vw;
@@ -41,4 +58,17 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+
+.portfolio-slider {
+    width: calc(100% + 10vw);
+    line-height: 0%;
+    overflow: hidden;
+    display: flex;
+}
+
+.portfolio-slider h4 {
+    line-height: 0%;
+    white-space: nowrap;
 }
