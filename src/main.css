@@ -1,3 +1,102 @@
+@import "tailwindcss"; /* index named as _index to keep this import at top of main.css*/
+
+:root {
+    --font-heading: 'Geist', sans-serif;
+    --font-body: 'Inter', sans-serif;
+
+  --black: #000000;
+  --background: #FBFAFA;
+  --primary: #F4D35E;
+  --secondary: #F95738;
+  --accent: #0D3B66;
+
+  font-size: 3.33vw;
+
+}
+@layer base {
+     *, *::before, *::after {
+        box-sizing: border-box;
+        font-synthesis: none;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        font-family: var(--font-heading);
+    }
+    
+    p, a {
+        font-family: var(--font-body);
+    }
+
+    h1 {
+        font-size: 4.25rem;
+        line-height: 1.1;
+    }
+    h2 {
+        font-size: 3.14rem;
+        line-height: 1.2;
+    }
+    h3 {
+        font-size: 1.6rem;
+    }
+    h4 {
+        font-size: 0.8rem;
+    }
+    p {
+        font-size: 1rem;
+    }
+
+    @media (max-width: 475px) {
+        h1 {
+            font-size: 4.75rem;
+            line-height: 1.1;
+        }
+        h2 {
+            font-size: 3.75rem;
+            line-height: 1.2;
+        }
+        h3 {
+            font-size: 2rem;
+        }
+        h4 {
+            font-size: 1rem;
+        }
+        p {
+            font-size: 1.2rem;
+        }
+    }
+
+}
+
+html {
+    font-size: 16px;
+}
+
+@media (max-width: 1280px) {
+    html {
+        font-size: 15px
+    }
+}
+
+
+@media (max-width: 1024px) {
+    html {
+        font-size: 14px
+    }
+}
+
+@media (max-width: 600px) {
+    html {
+        font-size: 12px
+    }
+}
+
+@media (max-width: 475px) {
+    html {
+        font-size: 10px;
+    }
+}
 @font-face {
   font-display: swap;
   font-family: 'Geist';
@@ -124,49 +223,4 @@
 .portfolio-slider h4 {
     line-height: 0%;
     white-space: nowrap;
-}
-:root {
-  font-size: 3.33vw;
-  --black: #000000;
-  --background: #FBFAFA;
-  --primary: #F4D35E;
-  --secondary: #F95738;
-  --accent: #0D3B66;
-}
-
-h1 {
-  font-family: 'Geist';
-  font-weight: 600;
-  font-size: clamp(0.7575rem, 2.75vw, 1.515rem);
-}
-
-h2 {
-  font-family: 'Geist';
-  font-weight: 400;
-  font-size: clamp(0.6rem, 2.17vw, 1.2rem);
-}
-
-h3 {
-  font-family: 'Geist';
-  font-weight: 400;
-  font-size: clamp(0.5rem, 1vw, 1rem);
-}
-
-h4 {
-  font-family: 'Geist';
-  font-weight: 400;
-  font-size: clamp(0.2825rem, 1vw, 0.565rem);
-}
-
-p {
-  font-family: 'Inter';
-  font-weight: 400;
-  font-size: clamp(0.25rem, 1.625vw, 0.5rem);
-}
-
-body {
-  margin: 0;
-  padding: 0;
-  background-color: var(--background);
-  overflow-x: hidden;
 }
