@@ -21,11 +21,11 @@ export const LoadingScreen = ({ onComplete }) => {
     
 		tl.to("#loading-border-content", {
 				opacity: 0,
-				delay: 1,
+				delay: 1.6,
 				onStart: () => console.log("Fading content...")
 			})
 			.to(".loading-border", {
-				height: "70px",
+				height: "80px",
 				duration: 0.8,
 				ease: "power1.out",
 			    onStart: () => console.log("Shrinking border...")
