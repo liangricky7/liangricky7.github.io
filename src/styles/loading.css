@@ -1,0 +1,12 @@
+.loading-border {
+    width: calc(100vw - 2rem);
+    height: calc(100vh - 2rem);
+    border: 4px solid var(--black);
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	margin-top: 1rem;
+	margin-inline: auto;
+}
