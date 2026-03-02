@@ -4,11 +4,13 @@
     --font-heading: 'Geist', sans-serif;
     --font-body: 'Inter', sans-serif;
 
-  --black: #000000;
-  --background: #FBFAFA;
-  --primary: #F4D35E;
-  --secondary: #F95738;
-  --accent: #0D3B66;
+	--black: #000000;
+	--background: #FBFAFA;
+	--primary: #F4D35E;
+	--secondary: #F95738;
+	--accent: #0D3B66;
+
+	--common-width: calc(100% - 2rem)
 }
 @layer base {
      *, *::before, *::after {
@@ -27,11 +29,11 @@
     }
 
     h1 {
-        font-size: 4.75rem;
+        font-size: 3.14rem;
         line-height: 1.1;
     }
     h2 {
-        font-size: 3.14rem;
+        font-size: 2.2rem;
         line-height: 1.2;
     }
     h3 {
