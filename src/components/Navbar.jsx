@@ -21,7 +21,7 @@ export const Navbar = () => {
     }, []);
     return (
         <>
-            <div className="fixed w-full">
+            <div className="fixed w-full z-10">
                 <div className="w-[var(--common-width)] h-[80px] border-4 border-[var(--black)] bg-[var(--background)] mx-auto mt-[1rem] px-8 flex items-center justify-between">
                     <h2 id='nav-item'>Ricky Liang</h2>
 
