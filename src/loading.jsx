@@ -16,19 +16,16 @@ export const LoadingScreen = ({ onComplete }) => {
 			onComplete: () => {
 				onComplete();
 			},
-			onStart: () => console.log("Timeline started!")
     	});
     
 		tl.to("#loading-border-content", {
 				opacity: 0,
 				delay: 1.6,
-				onStart: () => console.log("Fading content...")
 			})
 			.to(".loading-border", {
-				height: "80px",
-				duration: 0.8,
-				ease: "power1.out",
-			    onStart: () => console.log("Shrinking border...")
+				height: "60px",
+				duration: 0.9,
+				ease: "power3.inOut",
 			})
 
 	}, { scope: landingRef });
