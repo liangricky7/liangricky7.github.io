@@ -10,8 +10,11 @@
 	--secondary: #F95738;
 	--accent: #0D3B66;
 
-	--common-width: calc(100% - 2rem)
+	--common-width: calc(100% - 2rem);
+    --border-width: 3px;
+
 }
+
 @layer base {
      *, *::before, *::after {
         box-sizing: border-box;

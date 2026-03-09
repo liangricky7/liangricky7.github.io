@@ -1,4 +1,3 @@
-import { useRef, useState } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/all"
@@ -76,7 +75,6 @@ const Home = () => {
                 className="w-[var(--common-width)] mx-auto h-[calc(100vh-65px-2rem-2.5rem)] mt-5" // mt must always be twice the last rem subtracted in height calc
                 id="home-landing-container"
             >
-                <div className="h-full border-4 border-[var(--black)] p-5 flex gap-8 bg-[var(--background)]">
                     <div 
                         className="flex-4 p-8"
                         id="home-landing-content"
@@ -85,6 +83,7 @@ const Home = () => {
                         <p>
                             I'm a software engineer based in Baton Rouge, Louisiana. I have a passion for building intuitive and efficient software solutions that make a positive impact on people's lives. With experience in full-stack development, I enjoy working on projects that challenge me to learn and grow as a developer. In my free time, I love exploring new technologies, contributing to open-source projects, and collaborating with other developers to create innovative software applications.
                         </p>
+                <div className="w-full h-full border-[length:var(--border-width)] border-[var(--black)] p-5 flex flex-col justify-between gap-8 bg-[var(--background)]">
                     </div>
 
                      <div 
