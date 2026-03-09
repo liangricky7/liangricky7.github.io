@@ -43,6 +43,8 @@ const Home = () => {
     const subframeTl = useRef(null);
 
     const closeSubframe = () => {
+        if (animate) return;
+        setAnimate(true);
         requestAnimationFrame(() => {
             subframeCloseTl.current?.kill();
             subframeCloseTl.current = gsap.timeline()
@@ -70,6 +72,7 @@ const Home = () => {
                     ease: "power3.in",
                     onComplete: () => {
                         setSelected(null);
+                        setAnimate(false);
                     }
                 },)
         })
@@ -110,7 +113,7 @@ const Home = () => {
                 duration: 1,
                 ease: "power3.out",
             })
-            .from("#home-landing-subframe-thumbnail", {
+            .from(".home-landing-subframe-thumbnail", {
                 y: 50,
                 scale: 0.5,
                 opacity: 0,
@@ -169,7 +172,7 @@ const Home = () => {
                                 key={i}
                                 src={img.src}
                                 alt={img.title}
-                                className={` min-w-0 w-0 flex-1 h-full object-cover cursor-pointer`}
+                                className={`home-landing-subframe-thumbnail min-w-0 w-0 flex-1 h-full object-cover cursor-pointer`}
                                 id={`home-thumbnail-${i}`}
                                 onClick={() => openSubframe(i)}
                             />
