@@ -38,64 +38,6 @@ const Home = () => {
     const [selected, setSelected] = useState(null);
     const [animate, setAnimate] = useState(false); // ensure multiple subframes arent opened
     
-    const subframeThumbnailTween = useRef(null);
-    const subframeCloseTl = useRef(null);
-    const subframeTl = useRef(null);
-
-    const closeSubframe = () => {
-        if (animate) return;
-        setAnimate(true);
-        requestAnimationFrame(() => {
-            subframeCloseTl.current?.kill();
-            subframeCloseTl.current = gsap.timeline()
-                .to(`#home-landing-subframe-gradient`, {
-                    opacity: 0,
-                    duration: 0.52,
-                    ease: "power3.in",
-                })
-                .to(`#home-landing-subframe-text`, {
-                    y: 50,
-                    opacity: 0,
-                    duration: 0.8,
-                    ease: "power3.in",
-                }, "<")
-                .fromTo(`#home-background`, {
-                    backgroundColor: subframes[selected].backgroundColor,
-                }, {
-                    backgroundColor: "#FBFAFA",
-                    duration: 0.45,
-                    ease: "power3.in",
-                }, "<")
-                .to(`#home-landing-subframe`, {
-                    clipPath: "inset(100% 0 0 0)",
-                    duration: 0.45,
-                    ease: "power3.in",
-                    onComplete: () => {
-                        setSelected(null);
-                        setAnimate(false);
-                    }
-                },)
-        })
-    }
-
-    const openSubframe = (frameId) => {
-        if (animate) return;
-        setAnimate(true);
-        requestAnimationFrame(() => {
-            subframeThumbnailTween.current?.kill();
-            subframeThumbnailTween.current = gsap
-                .to(`#home-thumbnail-${frameId}`, {
-                    clipPath: "inset(100% 0 0 0)",
-                    duration: 0.52,
-                    ease: "power3.in",
-                    onComplete: () => {
-                        setSelected(frameId);
-                    }
-                })
-        })
-        
-    };
-
     // initial loading animation
     useGSAP(() => {
 		const tl = gsap.timeline();
@@ -123,12 +65,104 @@ const Home = () => {
             }, "<")            
     }, []);
 
-    // subframe animations
+    /* SUBFRAME NONSENSE BEGINS HERE */
+    const subframeOpenTl = useRef(null); // plays on thumbnail click to open subframe
+    const subframeCloseTl = useRef(null); // plays on return to homepage
+    const subframeTl = useRef(null); // plays to set up subframe after open tween is done
+
+    const openSubframe = (frameId) => {
+        if (animate) return;
+        setAnimate(true);
+        const otherFrames = subframes
+            .map((_, i) => i)
+            .filter(i => i !== frameId); // returns [x, y] where x and y are the other 2 frame ids that arent selected
+
+        requestAnimationFrame(() => {
+            subframeOpenTl.current?.kill();
+            subframeOpenTl.current = gsap.timeline({
+                onComplete: () => {
+                    setSelected(frameId);
+                }
+            })
+            .to(`#home-thumbnail-${frameId}`, {
+                clipPath: "inset(100% 0 0 0)",
+                duration: 0.52,
+                ease: "power3.in",
+            })
+            .to(otherFrames.map(i => `#home-thumbnail-${i}`), {
+                clipPath: "inset(100% 0 0 0)",
+                duration: 0.52,
+                ease: "power3.in",
+                stagger: 0.1,
+            }, "-=0.3")
+            .to("#home-landing-text", {
+                y: 50,
+                opacity: 0,
+                stagger: 0.2,
+                // duration: 0.6,
+                ease: "power3.in",
+            }, "<")          
+        })
+    };
+
+    const closeSubframe = () => {
+        if (animate) return;
+        setAnimate(true);
+        requestAnimationFrame(() => {
+            subframeCloseTl.current?.kill();
+            subframeCloseTl.current = gsap.timeline({
+                onComplete: () => {
+                    setSelected(null);
+                    setAnimate(false);
+                }
+            })
+                .to(`#home-landing-subframe-gradient`, {
+                    opacity: 0,
+                    duration: 0.52,
+                    ease: "power3.in",
+                })
+                .to(`#home-landing-subframe-text`, {
+                    y: 50,
+                    opacity: 0,
+                    duration: 0.8,
+                    ease: "power3.in",
+                }, "<")
+                .fromTo(`#home-background`, {
+                    backgroundColor: subframes[selected].backgroundColor,
+                    delay: 0.2,
+                }, {
+                    backgroundColor: "#FBFAFA",
+                    duration: 0.45,
+                    ease: "power3.in",
+                }, "<")
+                .to(`#home-landing-subframe`, {
+                    clipPath: "inset(100% 0 0 0)",
+                    duration: 0.45,
+                    ease: "power3.in",
+                },)
+                .from("#home-landing-text-child", {
+                    opacity: 0,
+                    y: 50,
+                    duration: 0.8,
+                    ease: "power3.out",
+                })
+                .from(".home-landing-subframe-thumbnail", {
+                    opacity: 0,
+                    scale: 0.5,
+                    y: 50,
+                    stagger: 0.2,
+                    duration: 0.8,
+                    ease: "power3.out",
+                }, "<")
+        })
+    }
+
+    // subframe open animation
     useGSAP(() => {
         if (selected === null) return;
         subframeTl.current = gsap.timeline({
             onComplete: () => {
-                gsap.set(`#home-thumbnail-${selected}`, { clipPath: "inset(0 0 0 0)", }); // reset thumbnail opacity for when we close the subframe
+                subframeOpenTl.current?.revert(); // reset effects of subframe open
                 setAnimate(false); // allow animations again after subframe is fully open
             }
         })
@@ -156,6 +190,7 @@ const Home = () => {
 
     }, { dependencies: [selected] });
 
+
     return (
         <main
             className="min-h-screen pt-[calc(65px+1.5rem)] bg-[var(--background)]"
@@ -172,7 +207,7 @@ const Home = () => {
                                 key={i}
                                 src={img.src}
                                 alt={img.title}
-                                className={`home-landing-subframe-thumbnail min-w-0 w-0 flex-1 h-full object-cover cursor-pointer`}
+                                className={`home-landing-subframe-thumbnail min-w-0 w-0 flex-1 h-full object-cover cursor-pointer border-3`}
                                 id={`home-thumbnail-${i}`}
                                 onClick={() => openSubframe(i)}
                             />
@@ -182,7 +217,11 @@ const Home = () => {
                         className="flex justify-between items-end mx-5 mb-8"
                         id="home-landing-text"    
                     > {/* gap must be same as parent padding */ }
-                        <h1 className="w-fit" id="home-landing-text-child">Welcome to my website!</h1>
+                        <div className="w-fit" id="home-landing-text-child">
+                            <h1>Welcome to my website!</h1>
+                            <h3>Click on any of the boxes to explore!</h3>
+                        </div>
+
                         <p className="w-[40%]" id="home-landing-text-child">Big Long INtroduction paragraph here blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah </p>
                     </div>
                 </div>
@@ -199,6 +238,7 @@ const Home = () => {
                         id="home-landing-subframe"
                     >
                         <div/> {/* to push content to the bottom */}
+
                         <div 
                             className="flex justify-between items-end mx-5 mb-8 text-white z-3" // gap must be same as parent padding 
                             id="home-landing-subframe-text"
