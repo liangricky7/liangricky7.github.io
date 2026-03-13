@@ -13,6 +13,8 @@
 	--common-width: calc(100% - 2rem);
     --border-width: 3px;
 
+    --common-border-radius: 2rem;
+    --small-border-radius: 2rem;
 }
 
 @layer base {

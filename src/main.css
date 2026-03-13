@@ -13,6 +13,8 @@
 	--common-width: calc(100% - 2rem);
     --border-width: 3px;
 
+    --common-border-radius: 2rem;
+    --small-border-radius: 2rem;
 }
 
 @layer base {
@@ -240,4 +242,6 @@ html {
 
 	margin-top: 1rem;
 	margin-inline: auto;
+
+	border-radius: var(--common-border-radius);
 }

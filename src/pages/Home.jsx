@@ -200,14 +200,14 @@ const Home = () => {
                 className="w-[var(--common-width)] mx-auto h-[calc(100vh-65px-2rem-1rem)]" // mt must always be twice the last rem subtracted in height calc
                 id="home-landing-container"
             >
-                <div className="w-full h-full border-[length:var(--border-width)] border-[var(--black)] p-5 flex flex-col justify-between gap-8 bg-[var(--background)]">
+                <div className="w-full h-full rounded-[var(--common-border-radius)] border-[length:var(--border-width)] border-[var(--black)] p-5 flex flex-col justify-between gap-8 bg-[var(--background)]">
                     <div className="h-[55%] flex gap-5 mx-5 mt-5"> {/* gap must be same as parent padding */ }
                         {subframes.map((img, i) => (
                             <img
                                 key={i}
                                 src={img.src}
                                 alt={img.title}
-                                className={`home-landing-subframe-thumbnail min-w-0 w-0 flex-1 h-full object-cover cursor-pointer border-3`}
+                                className={`home-landing-subframe-thumbnail min-w-0 w-0 flex-1 h-full object-cover cursor-pointer rounded-[var(--common-border-radius)] border-3`}
                                 id={`home-thumbnail-${i}`}
                                 onClick={() => openSubframe(i)}
                             />
@@ -229,7 +229,7 @@ const Home = () => {
                 {/* subframes */}
                 {selected !== null && (
                     <div 
-                        className="absolute inset-0 z-5 border-[length:var(--border-width)] p-5 flex flex-col justify-between"
+                        className="absolute inset-0 z-5 rounded-[var(--small-border-radius)] border-[length:var(--border-width)] p-5 flex flex-col justify-between overflow-hidden"
                         style={{
                             backgroundImage: `url(${subframes[selected].src})`,
                             backgroundSize: "cover",

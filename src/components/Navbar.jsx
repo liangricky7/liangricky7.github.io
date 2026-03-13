@@ -22,7 +22,7 @@ export const Navbar = () => {
     return (
         <>
             <div className="fixed w-full z-10">
-                <div className="w-[var(--common-width)] h-[60px] border-[length:var(--border-width)] border-[var(--black)] bg-[var(--background)] mx-auto mt-[1rem] px-8 flex items-center justify-between">
+                <div className="w-[var(--common-width)] h-[60px] rounded-[var(--common-border-radius)] border-[length:var(--border-width)] border-[var(--black)] bg-[var(--background)] mx-auto mt-[1rem] px-8 flex items-center justify-between">
                     <h3 id='nav-item'>Ricky Liang</h3>
                     <div 
                         className='flex gap-10'
