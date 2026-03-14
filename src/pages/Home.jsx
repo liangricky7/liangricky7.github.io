@@ -5,6 +5,10 @@ import { ScrollTrigger } from "gsap/all"
 
 import { resolveColor } from "../assets/helpers/resolveColor";
 
+import FSAEGif from "../assets/landing/formulalogo.webp"
+import PortfolioLogoGif from "../assets/landing/portfolio.webp"
+import SelfPortraitGif from "../assets/landing/selfportrait.webp"
+
 gsap.registerPlugin(useGSAP);
 gsap.registerPlugin(ScrollTrigger);
 
@@ -18,19 +22,22 @@ const subframes = [
         src: FSAE, 
         title: "TigerRacing Formula SAE", 
         paragraph: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris. Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit. Donec et mollis dolor. Praesent et diam eget libero egestas mattis sit amet vitae augue.",
-        backgroundColor: resolveColor("var(--primary)")
+        backgroundColor: resolveColor("var(--primary)"),
+        logoSrc: FSAEGif,
     },
     { 
         src: FSAE, 
         title: "Projects", 
         paragraph: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris. Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit. Donec et mollis dolor. Praesent et diam eget libero egestas mattis sit amet vitae augue.",
-        backgroundColor: resolveColor("var(--secondary)")
+        backgroundColor: resolveColor("var(--secondary)"),
+        logoSrc: PortfolioLogoGif,
     },
     { 
         src: FSAE, 
         title: "About", 
         paragraph: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris. Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit. Donec et mollis dolor. Praesent et diam eget libero egestas mattis sit amet vitae augue.",
-        backgroundColor: resolveColor("var(--accent)")
+        backgroundColor: resolveColor("var(--accent)"),
+        logoSrc: SelfPortraitGif,
     },
 ]
 
@@ -65,7 +72,7 @@ const Home = () => {
             }, "<")            
     }, []);
 
-    /* SUBFRAME NONSENSE BEGINS HERE */
+    /* SUBFRAME ANIMATION NONSENSE BEGINS HERE */
     const subframeOpenTl = useRef(null); // plays on thumbnail click to open subframe
     const subframeCloseTl = useRef(null); // plays on return to homepage
     const subframeTl = useRef(null); // plays to set up subframe after open tween is done
@@ -201,16 +208,26 @@ const Home = () => {
                 id="home-landing-container"
             >
                 <div className="w-full h-full rounded-[var(--common-border-radius)] border-[length:var(--border-width)] border-[var(--black)] p-5 flex flex-col justify-between gap-8 bg-[var(--background)]">
-                    <div className="h-[55%] flex gap-5 mx-5 mt-5"> {/* gap must be same as parent padding */ }
+                    <div className="h-[55%] flex gap-5 px-5 pt-5"> {/* gap must be same as parent padding */ }
                         {subframes.map((img, i) => (
-                            <img
+                            <div 
+                                className="home-landing-subframe-thumbnail relative min-w-0 flex-1 h-full flex rounded-[var(--common-border-radius)] overflow-hidden cursor-pointer"
                                 key={i}
-                                src={img.src}
-                                alt={img.title}
-                                className={`home-landing-subframe-thumbnail min-w-0 w-0 flex-1 h-full object-cover cursor-pointer rounded-[var(--common-border-radius)] border-3`}
-                                id={`home-thumbnail-${i}`}
                                 onClick={() => openSubframe(i)}
-                            />
+                                id={`home-thumbnail-${i}`}
+                            >
+                                {/* manual border since theres a small bug putting a border on the parent*/}
+                                <div className="absolute inset-0 rounded-[var(--common-border-radius)] border-[length:var(--border-width)] border-[color:var(--border-color)] pointer-events-none z-10" />
+                                <img
+                                    src={img.src}
+                                    alt={img.title}
+                                    className={`w-full h-full object-cover hover:scale-110 transition-transform duration-300 ease-out`}
+                                />
+                                <img
+                                    src={img.logoSrc}
+                                    className="w-[20%] absolute right-3 bottom-3"
+                                />
+                            </div>
                         ))}
                     </div>
                     <div 
