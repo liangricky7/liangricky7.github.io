@@ -5,6 +5,7 @@ import { ScrollTrigger } from "gsap/all"
 
 import { resolveColor } from "../assets/helpers/resolveColor";
 
+import HomeGif from "../assets/landing/landinglogo.webp"
 import FSAEGif from "../assets/landing/formulalogo.webp"
 import PortfolioLogoGif from "../assets/landing/portfolio.webp"
 import SelfPortraitGif from "../assets/landing/selfportrait.webp"
@@ -235,6 +236,10 @@ const Home = () => {
                         id="home-landing-text"    
                     > {/* gap must be same as parent padding */ }
                         <div className="w-fit" id="home-landing-text-child">
+                            <img
+                                src={HomeGif}
+                                className="w-26 ml-2 mb-4"
+                            />
                             <h1>Welcome to my website!</h1>
                             <h3>Click on any of the boxes to explore!</h3>
                         </div>
@@ -261,6 +266,10 @@ const Home = () => {
                             id="home-landing-subframe-text"
                         > 
                             <div className="w-fit">
+                                <img
+                                    src={subframes[selected].logoSrc}
+                                    className="w-30 mb-4"
+                                />
                                 <h1>{subframes[selected].title}</h1>
                                 <h3 
                                     onClick={() => closeSubframe()}
