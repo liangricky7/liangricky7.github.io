@@ -22,21 +22,21 @@ const subframes = [
     { 
         src: FSAE, 
         title: "TigerRacing Formula SAE", 
-        paragraph: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris. Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit. Donec et mollis dolor. Praesent et diam eget libero egestas mattis sit amet vitae augue.",
+        paragraph: "I'm currently the Software Lead for LSU's Formula SAE team, TigerRacing. As the Software Lead, I oversee the development across embedded systems, data analysis, and pure software applications.",
         backgroundColor: resolveColor("var(--primary)"),
         logoSrc: FSAEGif,
     },
     { 
         src: FSAE, 
         title: "Projects", 
-        paragraph: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris. Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit. Donec et mollis dolor. Praesent et diam eget libero egestas mattis sit amet vitae augue.",
+        paragraph: "From webtools for local hospitals to college club sites (and even some game dev on the side), my work is all about smart systems design and building stuff people actually enjoy using.",
         backgroundColor: resolveColor("var(--secondary)"),
         logoSrc: PortfolioLogoGif,
     },
     { 
         src: FSAE, 
         title: "About", 
-        paragraph: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris. Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit. Donec et mollis dolor. Praesent et diam eget libero egestas mattis sit amet vitae augue.",
+        paragraph: "I love building things! It's the bulk of what I do in my free time. But, I've learned that stepping away to pick up my guitar or reading into philsophy sharpens me as a developer as well as a person. Here's where I talk about myself outside the code.",
         backgroundColor: resolveColor("var(--accent)"),
         logoSrc: SelfPortraitGif,
     },
@@ -241,10 +241,13 @@ const Home = () => {
                                 className="w-26 ml-2 mb-4"
                             />
                             <h1>Welcome to my website!</h1>
-                            <h3>Click on any of the boxes to explore!</h3>
+                            <h3>Click on any of the boxes to explore.</h3>
                         </div>
 
-                        <p className="w-[40%]" id="home-landing-text-child">Big Long INtroduction paragraph here blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah </p>
+                        <p className="w-[42%]" id="home-landing-text-child">
+                       Hey! I'm a junior in CS at LSU currently balancing two worlds: <strong>leading the software side of a Formula SAE race car</strong> and preparing for a <strong>summer internship at Capital One.</strong> I’m big on turning complex problems into simple solutions and seeing my code impact the real world.
+                        Click around to learn more!
+                        </p>
                     </div>
                 </div>
 
