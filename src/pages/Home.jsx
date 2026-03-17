@@ -10,6 +10,8 @@ import FSAEGif from "../assets/landing/formulalogo.webp"
 import PortfolioLogoGif from "../assets/landing/portfolio.webp"
 import SelfPortraitGif from "../assets/landing/selfportrait.webp"
 
+import BackArrow from "../assets/landing/back-arrow.png"
+
 gsap.registerPlugin(useGSAP);
 gsap.registerPlugin(ScrollTrigger);
 
@@ -274,12 +276,20 @@ const Home = () => {
                                     className="w-30 mb-4"
                                 />
                                 <h1>{subframes[selected].title}</h1>
-                                <h3 
+                                <div
                                     onClick={() => closeSubframe()}
-                                    className="cursor-pointer"
+                                    className="flex items-center gap-3 cursor-pointer"
                                 >
-                                    Return to Homepage
-                                </h3>
+                                    <h3>
+                                        Return to Homepage
+                                    </h3>
+                                    <img
+                                        src={BackArrow}
+                                        className="h-[1.4rem]"
+                                    />
+                                </div>
+
+                                
                             </div>
                             <p className="w-[40%]">{subframes[selected].paragraph} </p>
                         </div>
