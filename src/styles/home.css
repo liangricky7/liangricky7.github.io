@@ -72,3 +72,15 @@
     line-height: 0%;
     white-space: nowrap;
 }
+
+@media (min-width: 475px) {
+    .desktop-hider {
+        display: none;;
+    }
+}
+
+@media (max-width: 475px) {
+    .mobile-hider {
+        display: none;;
+    }
+}

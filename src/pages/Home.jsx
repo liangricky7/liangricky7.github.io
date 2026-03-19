@@ -19,6 +19,8 @@ gsap.config({ colorProps: { interpolation: "rgb" } }); // 👈 module-level, run
 
 import Headshot from "../assets/headshot.jpg"
 import FSAE from "../assets/FSAE.jpg"
+import Projects from "../assets/Rectangle-8.png"
+import Me from "../assets/Rectangle-9.png"
 
 const subframes = [
     { 
@@ -29,14 +31,14 @@ const subframes = [
         logoSrc: FSAEGif,
     },
     { 
-        src: FSAE, 
+        src: Projects, 
         title: "Projects", 
         paragraph: "From webtools for local hospitals to college club sites (and even some game dev on the side), my work is all about smart systems design and building stuff people actually enjoy using.",
         backgroundColor: resolveColor("var(--secondary)"),
         logoSrc: PortfolioLogoGif,
     },
     { 
-        src: FSAE, 
+        src: Me, 
         title: "About", 
         paragraph: "I love building things! It's the bulk of what I do in my free time. But, I've learned that stepping away to pick up my guitar or reading into philsophy sharpens me as a developer as well as a person. Here's where I talk about myself outside the code.",
         backgroundColor: resolveColor("var(--accent)"),
@@ -214,7 +216,7 @@ const Home = () => {
                     <div className="h-[55%] flex gap-5 px-5 pt-5"> {/* gap must be same as parent padding */ }
                         {subframes.map((img, i) => (
                             <div 
-                                className="home-landing-subframe-thumbnail relative min-w-0 flex-1 h-full flex rounded-[var(--common-border-radius)] overflow-hidden cursor-pointer"
+                                className="home-landing-subframe-thumbnail mobile-hider relative min-w-0 flex-1 h-full flex rounded-[var(--common-border-radius)] overflow-hidden cursor-pointer"
                                 key={i}
                                 onClick={() => openSubframe(i)}
                                 id={`home-thumbnail-${i}`}
@@ -232,9 +234,25 @@ const Home = () => {
                                 />
                             </div>
                         ))}
+                        {subframes.map((img, i) => (
+                            <div 
+                                className="home-landing-subframe-thumbnail desktop-hider relative min-w-0 flex-1 h-fit aspect-square flex items-center justify-center rounded-[var(--common-border-radius)] overflow-hidden cursor-pointer"
+                                style={{
+                                    backgroundColor: subframes[i - 2 < 0 ? i + 1 : i - 2].backgroundColor,
+                                }}
+                                key={i}
+                                onClick={() => openSubframe(i)}
+                                id={`home-thumbnail-${i}`}
+                            >
+                                <img
+                                    src={img.logoSrc}
+                                    className="object-cover"
+                                />
+                            </div>
+                        ))}
                     </div>
                     <div 
-                        className="flex justify-between items-end mx-5 mb-8"
+                        className="flex justify-between items-end mx-5 mb-8 sm: flex-col gap-12"
                         id="home-landing-text"    
                     > {/* gap must be same as parent padding */ }
                         <div className="w-fit" id="home-landing-text-child">
@@ -246,7 +264,7 @@ const Home = () => {
                             <h3>Click on any of the boxes to explore.</h3>
                         </div>
 
-                        <p className="w-[42%]" id="home-landing-text-child">
+                        <p className="w-[42%] sm: w-full" id="home-landing-text-child">
                        Hey! I'm a junior in CS at LSU currently balancing two worlds: <strong>leading the software side of a Formula SAE race car</strong> and preparing for a <strong>summer internship at Capital One.</strong> I’m big on turning complex problems into simple solutions and seeing my code impact the real world.
                         Click around to learn more!
                         </p>

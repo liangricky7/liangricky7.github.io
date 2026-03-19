@@ -56,11 +56,11 @@
 
     @media (max-width: 475px) {
         h1 {
-            font-size: 4.75rem;
+            font-size: 4.25rem;
             line-height: 1.1;
         }
         h2 {
-            font-size: 3.75rem;
+            font-size: 3.2rem;
             line-height: 1.2;
         }
         h3 {
@@ -231,6 +231,19 @@ html {
     line-height: 0%;
     white-space: nowrap;
 }
+
+@media (min-width: 475px) {
+    .desktop-hider {
+        display: none;;
+    }
+}
+
+@media (max-width: 475px) {
+    .mobile-hider {
+        display: none;;
+    }
+}
+
 .loading-border {
     width: calc(100vw - 2rem);
     height: calc(100vh - 2rem);
