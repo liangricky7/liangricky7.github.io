@@ -213,7 +213,7 @@ const Home = () => {
                 id="home-landing-container"
             >
                 <div className="w-full h-full rounded-[var(--common-border-radius)] border-[length:var(--border-width)] border-[var(--black)] p-5 flex flex-col justify-between gap-8 bg-[var(--background)]">
-                    <div className="h-[55%] flex gap-5 px-5 pt-5 sm: pt-20"> {/* gap must be same as parent padding */ }
+                    <div className="h-[55%] flex gap-5 px-5 pt-5 max-[475px]:pt-20"> {/* gap must be same as parent padding */ }
                         {subframes.map((img, i) => (
                             <div 
                                 className="home-landing-subframe-thumbnail mobile-hider relative min-w-0 flex-1 h-full flex rounded-[var(--common-border-radius)] overflow-hidden cursor-pointer"
@@ -252,7 +252,7 @@ const Home = () => {
                         ))}
                     </div>
                     <div 
-                        className="flex justify-between items-end mx-5 mb-8 sm: flex-col gap-12"
+                        className="flex justify-between items-end mx-5 mb-8 max-[475px]:flex-col gap-12"
                         id="home-landing-text"    
                     > {/* gap must be same as parent padding */ }
                         <div className="w-fit" id="home-landing-text-child">
@@ -264,7 +264,7 @@ const Home = () => {
                             <h3>Click on any of the boxes to explore.</h3>
                         </div>
 
-                        <p className="w-[42%] sm: w-full" id="home-landing-text-child">
+                        <p className="w-[42%] max-[475px]:w-full" id="home-landing-text-child">
                        Hey! I'm a junior in CS at LSU currently balancing two worlds: <strong>leading the software side of a Formula SAE race car</strong> and preparing for a <strong>summer internship at Capital One.</strong> I’m big on turning complex problems into simple solutions and seeing my code impact the real world.
                         Click around to learn more!
                         </p>
