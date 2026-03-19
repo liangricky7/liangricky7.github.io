@@ -213,7 +213,7 @@ const Home = () => {
                 id="home-landing-container"
             >
                 <div className="w-full h-full rounded-[var(--common-border-radius)] border-[length:var(--border-width)] border-[var(--black)] p-5 flex flex-col justify-between gap-8 bg-[var(--background)]">
-                    <div className="h-[55%] flex gap-5 px-5 pt-5"> {/* gap must be same as parent padding */ }
+                    <div className="h-[55%] flex gap-5 px-5 pt-5 sm: pt-20"> {/* gap must be same as parent padding */ }
                         {subframes.map((img, i) => (
                             <div 
                                 className="home-landing-subframe-thumbnail mobile-hider relative min-w-0 flex-1 h-full flex rounded-[var(--common-border-radius)] overflow-hidden cursor-pointer"
