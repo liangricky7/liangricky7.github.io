@@ -15,7 +15,7 @@ import BackArrow from "../assets/landing/back-arrow.png"
 gsap.registerPlugin(useGSAP);
 gsap.registerPlugin(ScrollTrigger);
 
-gsap.config({ colorProps: { interpolation: "rgb" } }); // 👈 module-level, runs once
+gsap.config({ colorProps: { interpolation: "rgb" } });
 
 import Headshot from "../assets/headshot.jpg"
 import FSAE from "../assets/FSAE.jpg"
